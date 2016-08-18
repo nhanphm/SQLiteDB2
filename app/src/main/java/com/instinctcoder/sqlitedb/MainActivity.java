@@ -92,6 +92,11 @@ public class MainActivity extends ActionBarActivity implements android.view.View
                 searchManager.getSearchableInfo(getComponentName()));
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
+            public boolean onQueryTextSubmit(String query) {
+                return true;
+                }
+
+            @Override
             public boolean onQueryTextChange(String newText) {
                 if (TextUtils.isEmpty(newText)){
                     adapter.getFilter().filter("");
